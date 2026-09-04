@@ -97,11 +97,16 @@ def run_attention_torch(
     *,
     perf_filename,
     device="cuda:0",
+    cached_tokens_per_seq: int = 0,
 ):
     device = torch.device(device)
     torch.set_default_device(device)
     torch.cuda.set_device(device)
 
+    if cached_tokens_per_seq < 0:
+        raise ValueError(f"cached_tokens_per_seq must be non-negative, got {cached_tokens_per_seq}")
+    if cached_tokens_per_seq and not is_context_phase:
+        raise ValueError("cached_tokens_per_seq is supported only for context attention")
     if attn_backend_name not in {"TRTLLM", "FLASHINFER"}:
         raise ValueError(f"Unsupported TRT-LLM dense attention backend: {attn_backend_name}")
     is_flashinfer = attn_backend_name == "FLASHINFER"
@@ -264,7 +269,9 @@ def run_attention_torch(
 
     num_hidden_layers = 1
 
-    synthetic_max_seq_len = input_len + output_len + 1
+    if cached_tokens_per_seq < 0:
+        raise ValueError(f"cached_tokens_per_seq must be non-negative, got {cached_tokens_per_seq}")
+    synthetic_max_seq_len = cached_tokens_per_seq + input_len + output_len + 1
     if attention_window_size > 0:
         synthetic_max_seq_len = max(synthetic_max_seq_len, attention_window_size + output_len + 1)
 
@@ -295,7 +302,7 @@ def run_attention_torch(
     )
 
     input_seq_lens = [input_len for _ in range(batch_size)]
-    total_seq_lens = [input_len + output_len for _ in range(batch_size)]
+    total_seq_lens = [cached_tokens_per_seq + input_len + output_len for _ in range(batch_size)]
     request_ids = list(range(batch_size))
     kv_cache_manager.add_dummy_requests(request_ids, total_seq_lens)
 
@@ -305,13 +312,15 @@ def run_attention_torch(
             num_contexts=batch_size,
             kv_cache_params=KVCacheParams(
                 use_cache=True,
-                num_cached_tokens_per_seq=[0 for _ in range(batch_size)],
+                num_cached_tokens_per_seq=[cached_tokens_per_seq for _ in range(batch_size)],
                 block_ids_per_seq=None,
                 host_max_attention_window_sizes=None,
                 host_sink_token_length=None,
             ),
             runtime_features=AttentionRuntimeFeatures(
-                chunked_prefill=False, cache_reuse=False, has_speculative_draft_tokens=False
+                chunked_prefill=False,
+                cache_reuse=cached_tokens_per_seq > 0,
+                has_speculative_draft_tokens=False,
             ),
         )
     else:
@@ -413,7 +422,7 @@ def run_attention_torch(
     # write result
     if is_context_phase:
         isl = input_len
-        step = 0
+        step = cached_tokens_per_seq
         op_name = "context_attention"
     else:
         isl = 1
