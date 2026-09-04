@@ -370,7 +370,7 @@ def _run_one(
     dmon_path = output_dir / f"nvidia_dmon_{workload.name}.csv"
     with dmon_path.open("w", encoding="utf-8") as dmon_output:
         dmon = subprocess.Popen(
-            ["nvidia-smi", "dmon", "-i", str(smi_index), "-s", "p", "-d", "1", "-o", "DT"],
+            ["nvidia-smi", "dmon", "-i", str(smi_index), "-s", "pc", "-d", "1", "-o", "DT"],
             stdout=dmon_output,
             stderr=subprocess.PIPE,
             text=True,

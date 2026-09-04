@@ -86,7 +86,10 @@ after it; the collector deliberately adds no pre-run or post-run sleep.
   kernel identity, requested/executed dtype, software/GPU identity, timestamps,
   and comments.
 - `run_manifest.json`: workload definitions and the default-clock reset result.
-- `nvidia_dmon_<workload>.csv`: one power-only dmon trace per workload.
+- `nvidia_dmon_<workload>.csv`: one raw power-and-clock dmon trace per
+  workload. It includes `pwr` (watts), `pclk` (processor clock MHz), and `mclk`
+  (memory clock MHz).
 
-The collector does not calculate or report average power. Calculate it from the
-`pwr` column in the raw dmon trace using your chosen sampling policy.
+The collector does not calculate or report average power or frequency. Calculate
+them from the `pwr`, `pclk`, and `mclk` columns in the raw dmon trace using your
+chosen sampling policy.

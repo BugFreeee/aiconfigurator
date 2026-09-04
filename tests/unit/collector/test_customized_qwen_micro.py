@@ -50,6 +50,7 @@ def test_attention_and_gdn_workloads_use_aic_trtllm_collectors():
     assert "cached_tokens_per_seq=workload.cache_tokens if is_context else 0" in source
     assert "from collector.helper import benchmark_with_power" in source
     assert '"--workloads"' in source
+    assert '"-s", "pc"' in source
 
 
 def test_cached_prefill_uses_proven_aic_metadata_contract():
