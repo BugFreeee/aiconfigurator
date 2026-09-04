@@ -1,0 +1,5 @@
+#Date        Time         gpu    pwr  gtemp  mtemp   mclk   pclk 
+#YYYYMMDD    HH:MM:SS     Idx      W      C      C    MHz    MHz 
+ 20260904    09:03:07       0    203     31     32   3996   1965 
+ 20260904    09:03:08       0    206     31     32   3996   1965 
+ 20260904    09:03:09       0    202     30     32   3996   1965 

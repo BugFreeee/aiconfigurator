@@ -1,0 +1,78 @@
+{
+  "clock_reset": {
+    "command": [
+      "nvidia-smi",
+      "-i",
+      "0",
+      "-rac"
+    ],
+    "returncode": 0,
+    "stdout": "The requested functionality has been deprecated.\nAll done.\n",
+    "stderr": ""
+  },
+  "workloads": [
+    {
+      "name": "moe_down_prefill",
+      "kind": "moe_down",
+      "phase": "prefill",
+      "batch_size": 16,
+      "sequence_length": 512,
+      "requested_dtype": "fp8",
+      "cache_tokens": 0,
+      "query_heads": 0,
+      "kv_heads": 0,
+      "head_dim": 0,
+      "k_heads": 0,
+      "v_heads": 0,
+      "hidden_size": 1024,
+      "intermediate_size": 4096,
+      "top_k": 10,
+      "local_experts": 64,
+      "global_experts": 512,
+      "data_parallel_size": 8,
+      "expert_parallel_size": 8
+    },
+    {
+      "name": "moe_gate_up_decode",
+      "kind": "moe_gate_up",
+      "phase": "decode",
+      "batch_size": 16,
+      "sequence_length": 1,
+      "requested_dtype": "fp8",
+      "cache_tokens": 0,
+      "query_heads": 0,
+      "kv_heads": 0,
+      "head_dim": 0,
+      "k_heads": 0,
+      "v_heads": 0,
+      "hidden_size": 1024,
+      "intermediate_size": 4096,
+      "top_k": 10,
+      "local_experts": 64,
+      "global_experts": 512,
+      "data_parallel_size": 8,
+      "expert_parallel_size": 8
+    },
+    {
+      "name": "moe_gate_up_prefill",
+      "kind": "moe_gate_up",
+      "phase": "prefill",
+      "batch_size": 16,
+      "sequence_length": 512,
+      "requested_dtype": "fp8",
+      "cache_tokens": 0,
+      "query_heads": 0,
+      "kv_heads": 0,
+      "head_dim": 0,
+      "k_heads": 0,
+      "v_heads": 0,
+      "hidden_size": 1024,
+      "intermediate_size": 4096,
+      "top_k": 10,
+      "local_experts": 64,
+      "global_experts": 512,
+      "data_parallel_size": 8,
+      "expert_parallel_size": 8
+    }
+  ]
+}

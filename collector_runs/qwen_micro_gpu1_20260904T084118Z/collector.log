@@ -1,0 +1,54 @@
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 26.05 (build 313520559)
+PyTorch Version 2.12.0a0+5aff392
+Container image Copyright (c) 2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Copyright (c) 2014-2024 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+Skipping import of cpp extensions due to incompatible torch version 2.12.0a0+5aff3928d8.nv26.05 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+[TensorRT-LLM] TensorRT LLM version: 1.3.0rc23
+[TRT-LLM] [I] [batchmgr][RANK 0] Max KV cache blocks per sequence: 2049 [window size=131074], tokens per block=64, primary blocks=73764, secondary blocks=0, max sequence length=131074
+[TRT-LLM] [I] [batchmgr][RANK 0] Number of tokens per block: 64.
+[TRT-LLM] [I] [batchmgr][RANK 0] [MemUsageChange] Allocated 4.50 GiB for max tokens in paged KV cache (4720896).
+2026-09-04 08:41:36,206 - INFO - cubin_loader.py:231 - flashinfer.jit: Fetching 158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen//checksums.txt from https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/checksums.txt
+2026-09-04 08:41:36,207 - INFO - cubin_loader.py:84 - flashinfer.jit: Acquired lock for /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/checksums.txt
+2026-09-04 08:41:36,294 - INFO - cubin_loader.py:114 - flashinfer.jit: File downloaded successfully: https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/checksums.txt -> /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/checksums.txt
+2026-09-04 08:41:36,305 - INFO - cubin_loader.py:231 - flashinfer.jit: Fetching 158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen//include/flashInferMetaInfo.h from https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/include/flashInferMetaInfo.h
+2026-09-04 08:41:36,305 - INFO - cubin_loader.py:84 - flashinfer.jit: Acquired lock for /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/include/flashInferMetaInfo.h
+2026-09-04 08:41:36,712 - INFO - cubin_loader.py:114 - flashinfer.jit: File downloaded successfully: https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/include/flashInferMetaInfo.h -> /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/include/flashInferMetaInfo.h
+2026-09-04 08:42:02,595 - INFO - cubin_loader.py:231 - flashinfer.jit: Fetching 158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen//fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvVarSeqQ16Kv128StaticSwapsAbForGen.cubin from https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvVarSeqQ16Kv128StaticSwapsAbForGen.cubin
+2026-09-04 08:42:02,595 - INFO - cubin_loader.py:84 - flashinfer.jit: Acquired lock for /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvVarSeqQ16Kv128StaticSwapsAbForGen.cubin
+2026-09-04 08:42:02,896 - INFO - cubin_loader.py:114 - flashinfer.jit: File downloaded successfully: https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvVarSeqQ16Kv128StaticSwapsAbForGen.cubin -> /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvVarSeqQ16Kv128StaticSwapsAbForGen.cubin
+2026-09-04 08:42:02,898 - INFO - cubin_loader.py:231 - flashinfer.jit: Fetching 158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen//fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvCgaVarSeqQ16Kv128StaticSwapsAbForGen.cubin from https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvCgaVarSeqQ16Kv128StaticSwapsAbForGen.cubin
+2026-09-04 08:42:02,898 - INFO - cubin_loader.py:84 - flashinfer.jit: Acquired lock for /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvCgaVarSeqQ16Kv128StaticSwapsAbForGen.cubin
+2026-09-04 08:42:03,101 - INFO - cubin_loader.py:114 - flashinfer.jit: File downloaded successfully: https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvCgaVarSeqQ16Kv128StaticSwapsAbForGen.cubin -> /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OBfloat16H256PagedKvCausalP64MultiCtasKvCgaVarSeqQ16Kv128StaticSwapsAbForGen.cubin
+Kernel is very fast (0.402ms), running 2486 iterations
+[TRT-LLM] [I] [batchmgr][RANK 0] Max KV cache blocks per sequence: 2057 [window size=131586], tokens per block=64, primary blocks=74052, secondary blocks=0, max sequence length=131586
+[TRT-LLM] [I] [batchmgr][RANK 0] Number of tokens per block: 64.
+[TRT-LLM] [I] [batchmgr][RANK 0] [MemUsageChange] Allocated 4.52 GiB for max tokens in paged KV cache (4739328).
+2026-09-04 08:42:04,672 - INFO - cubin_loader.py:231 - flashinfer.jit: Fetching 158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen//fmhaSm100fKernel_QkvE4m3OE4m3H256PagedKvCausalP64VarSeqQ128Kv128PersistentContext.cubin from https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OE4m3H256PagedKvCausalP64VarSeqQ128Kv128PersistentContext.cubin
+2026-09-04 08:42:04,672 - INFO - cubin_loader.py:84 - flashinfer.jit: Acquired lock for /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OE4m3H256PagedKvCausalP64VarSeqQ128Kv128PersistentContext.cubin
+2026-09-04 08:42:04,834 - INFO - cubin_loader.py:114 - flashinfer.jit: File downloaded successfully: https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OE4m3H256PagedKvCausalP64VarSeqQ128Kv128PersistentContext.cubin -> /root/.cache/flashinfer/cubins/158f6fa11ef139a098cfddcdddce73ca99d164ad/fmha/trtllm-gen/fmhaSm100fKernel_QkvE4m3OE4m3H256PagedKvCausalP64VarSeqQ128Kv128PersistentContext.cubin
+  Error at batch_size=16: name 'causal_conv1d_update' is not defined
+  Error at batch_size=16, seq_len=512: name 'causal_conv1d_fn' is not defined

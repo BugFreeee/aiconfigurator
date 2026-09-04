@@ -1,0 +1,5 @@
+#Date        Time         gpu    pwr  gtemp  mtemp 
+#YYYYMMDD    HH:MM:SS     Idx      W      C      C 
+ 20260904    08:42:04       0    412     31     34 
+ 20260904    08:42:05       0    488     39     34 
+ 20260904    08:42:06       0 
